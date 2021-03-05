@@ -4,16 +4,18 @@ import { Link } from 'react-router-native';
 
 import Text from './Text';
 
+import theme from '../theme';
+
 const styles = StyleSheet.create({
-  text: {
-    padding: 10,
+  appBarTabText: {
+    padding: theme.paddings.appBarTabTextPadding,
   },
 });
 
 const AppBarTab = ({ title, path }) => {
   return  <Link to={path} component={TouchableWithoutFeedback}>
       <Text
-        style={styles.text}
+        style={styles.appBarTabText}
         color='tab'
         fontSize='tab'
         fontWeight='bold'
