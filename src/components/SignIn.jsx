@@ -8,6 +8,8 @@ import { StyleSheet, View } from 'react-native';
 
 import Button from './Button';
 
+import useSignIn from '../hooks/useSignIn';
+
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
@@ -40,8 +42,18 @@ const SignInForm = ({ onSubmit }) => {
 };
 
 const SignIn = () => {
-  const onSubmit = values => {
-    console.log(values);
+  const [signIn] = useSignIn();
+
+  const onSubmit = async (values, { resetForm }) => {
+    const { username, password } = values;
+
+    try {
+      const { data } = await signIn({ username, password });
+      console.log(data);
+      resetForm({});
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   return (
