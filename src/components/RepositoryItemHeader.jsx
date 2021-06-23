@@ -36,8 +36,8 @@ const RepositoryItemHeader = ({ fullName, description, avatarUrl, language }) =>
         <Image style={styles.avatar} source={{ uri: avatarUrl }} />
       </View>
       <View style={styles.infoContainer}>
-        <Text fontSize='subheading' fontWeight='bold'>{fullName}</Text>
-        <Text color='textSecondary'>{description}</Text>
+        <Text fontSize='subheading' fontWeight='bold' testID='fullName'>{fullName}</Text>
+        <Text color='textSecondary' testID='description'>{description}</Text>
         <View style={styles.languageContainer}>
           <LanguageTag style={styles.languageTag} text={language} />
         </View>

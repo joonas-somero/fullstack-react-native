@@ -15,10 +15,10 @@ const styles = StyleSheet.create({
 const RepositoryItemStats = ({ stars, forks, reviews, rating }) => {
   return (
     <View style={styles.container}>
-      <StatItem title='Stars' value={toThousands(stars)} />
-      <StatItem title='Forks' value={toThousands(forks)} />
-      <StatItem title='Reviews' value={toThousands(reviews)} />
-      <StatItem title='Rating' value={rating} />
+      <StatItem title='Stars' value={toThousands(stars)} testID='stargazersCount' />
+      <StatItem title='Forks' value={toThousands(forks)} testID='forksCount' />
+      <StatItem title='Reviews' value={toThousands(reviews)} testID='reviewCount' />
+      <StatItem title='Rating' value={rating} testID='ratingAverage' />
     </View>
   );
 };

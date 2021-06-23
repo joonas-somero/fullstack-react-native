@@ -13,10 +13,10 @@ const styles = StyleSheet.create({
   },
 });
 
-const StatItem = ({ title, value }) => {
+const StatItem = ({ title, value, testID }) => {
   return (
     <View style={styles.container}>
-      <Text fontWeight='bold'>{value}</Text>
+      <Text fontWeight='bold' testID={testID}>{value}</Text>
       <Text color='textSecondary' style={styles.title}>{title}</Text>
     </View>
   );
